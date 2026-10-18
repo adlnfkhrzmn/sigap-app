@@ -22,7 +22,7 @@ Unduh berkas instalasi hanya dari saluran resmi distribusi SIGAP:
 - **Tautan Unduhan Langsung**: **[Unduh SIGAP.apk](https://github.com/adlnfkhrzmn/sigap-app/releases/latest/download/SIGAP.apk)**
 
 > [!NOTE]
-> **Status Tautan Unduhan**: Tautan unduhan di atas disiapkan untuk merujuk langsung ke rilis resmi terbaru, namun tautan tersebut **baru akan aktif setelah rilis resmi SIGAP diterbitkan pada repositori publik**. Silakan kunjungi halaman [Releases](https://github.com/adlnfkhrzmn/sigap-app/releases) untuk melihat status ketersediaan rilis.
+> **Status Tautan Unduhan**: Setelah rilis resmi diterbitkan, tautan ini akan mengarah ke berkas `SIGAP.apk` dari rilis resmi terbaru. Jika berkas belum tersedia, periksa halaman [Releases](https://github.com/adlnfkhrzmn/sigap-app/releases).
 
 > [!IMPORTANT]
 > Jangan pernah mengunduh berkas APK SIGAP dari situs web pihak ketiga yang tidak dikenal, tautan pendek acak di media sosial, atau pesan grup obrolan yang tidak terpercaya. Berkas dari sumber tidak resmi berisiko dimanipulasi atau disisipi program berbahaya.

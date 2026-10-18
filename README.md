@@ -20,14 +20,14 @@ Aplikasi SIGAP didistribusikan secara mandiri melalui berkas instalasi APK resmi
 | **Nama Berkas** | `SIGAP.apk` |
 | **Ukuran Berkas** | `13.288.129` bytes (~`13,29 MB`) |
 | **Persyaratan Sistem** | Android 8.0 (API level 26) atau versi yang lebih baru (Target SDK: API level 34) |
-| **Status Distribusi** | Menunggu penerbitan rilis resmi |
+| **Status Distribusi** | Rilis resmi v1.0.0 (tersedia melalui GitHub Releases) |
 
 ### Tautan Unduhan Resmi
 
 **[DOWNLOAD APK SIGAP](https://github.com/adlnfkhrzmn/sigap-app/releases/latest/download/SIGAP.apk)**
 
 > [!NOTE]
-> **Status Tautan Unduhan**: Tautan unduhan di atas disiapkan untuk merujuk langsung ke aset rilis resmi terbaru (`SIGAP.apk`), namun tautan tersebut **baru akan aktif setelah repositori publik dan rilis resmi pertama kali diterbitkan pada GitHub Releases**. Sebelum rilis diterbitkan, tautan ini belum dapat digunakan. Silakan periksa halaman [Releases](https://github.com/adlnfkhrzmn/sigap-app/releases) untuk melihat daftar rilis yang tersedia.
+> **Status Tautan Unduhan**: Setelah rilis resmi diterbitkan, tautan ini akan mengarah ke berkas `SIGAP.apk` dari rilis resmi terbaru. Jika berkas belum tersedia, periksa halaman [Releases](https://github.com/adlnfkhrzmn/sigap-app/releases).
 
 Untuk panduan lengkap mengenai langkah-langkah pengunduhan, perizinan instalasi aplikasi dari luar toko aplikasi, serta penanganan dialog Google Play Protect, silakan baca:
 **[Panduan Instalasi APK Android](INSTALASI_APK.md)**
