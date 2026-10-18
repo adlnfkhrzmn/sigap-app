@@ -22,7 +22,7 @@ Unduh berkas instalasi hanya dari saluran resmi distribusi SIGAP:
 - **Tautan Unduhan Langsung**: **[Unduh SIGAP.apk](https://github.com/adlnfkhrzmn/sigap-app/releases/latest/download/SIGAP.apk)**
 
 > [!NOTE]
-> **Status Tautan Unduhan**: Setelah rilis resmi diterbitkan, tautan ini akan mengarah ke berkas `SIGAP.apk` dari rilis resmi terbaru. Jika berkas belum tersedia, periksa halaman [Releases](https://github.com/adlnfkhrzmn/sigap-app/releases).
+> **Status Tautan Unduhan**: Rilis resmi SIGAP POS v1.0.0 sudah tersedia. Gunakan tautan di atas untuk mengunduh `SIGAP.apk` dari rilis resmi terbaru. Jika berkas tidak dapat diunduh, buka halaman [Releases](https://github.com/adlnfkhrzmn/sigap-app/releases) untuk memeriksa ketersediaan aset.
 
 > [!IMPORTANT]
 > Jangan pernah mengunduh berkas APK SIGAP dari situs web pihak ketiga yang tidak dikenal, tautan pendek acak di media sosial, atau pesan grup obrolan yang tidak terpercaya. Berkas dari sumber tidak resmi berisiko dimanipulasi atau disisipi program berbahaya.
