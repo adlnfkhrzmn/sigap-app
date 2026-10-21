@@ -6,24 +6,32 @@
 
 SIGAP adalah aplikasi kasir Android untuk UMKM. Kamu bisa mencatat transaksi, mengelola produk dan stok, melacak shift kasir, mencatat biaya operasional, serta melihat laporan laba rugi. Seluruh data usaha disimpan secara lokal di perangkat, sehingga fitur kasir inti dapat digunakan penuh tanpa koneksi internet.
 
-## Status Rilis & Unduhan
-
-> [!NOTE]
-> **Status: Calon Rilis v1.1.0 (Menunggu Publikasi GitHub Release)**  
-> Berkas APK rilis v1.1.0 dan checksum telah selesai disiapkan di repositori staging lokal. Tautan unduhan langsung v1.1.0 di bawah ini akan aktif segera setelah rilis resmi `v1.1.0` dipublikasikan ke GitHub Releases beserta aset berkas instalasinya.
->
-> Untuk mengunduh rilis stabil yang saat ini telah aktif di publik, silakan kunjungi:  
-> 👉 **[Halaman Rilis Resmi SIGAP (v1.0.0)](https://github.com/adlnfkhrzmn/sigap-app/releases)**
-
-### Tautan Unduh Berkas Rilis v1.1.0
+## Download
 
 **[Download SIGAP v1.1.0 APK](https://github.com/adlnfkhrzmn/sigap-app/releases/download/v1.1.0/SIGAP.apk)**
 
+- **Versi**: 1.1.0 (Rilis Resmi)
 - **Target Sistem**: Android 8.0 (API level 26) atau lebih baru
 - **Ukuran Berkas**: ~13,58 MB (`13.583.041` bytes)
-- **Tanggal Persiapan**: 21 Oktober 2026
 
 Lihat [catatan rilis](RELEASE_NOTES.md) untuk rincian pembaruan versi 1.1.0 dan riwayat versi sebelumnya.
+
+## Screenshot Aplikasi
+
+<table>
+  <tr>
+    <td align="center"><strong>Kasir</strong><br><img src="assets/screenshots/01-kasir.png" alt="Tampilan kasir SIGAP" width="240"></td>
+    <td align="center"><strong>Produk</strong><br><img src="assets/screenshots/02-produk.png" alt="Katalog produk SIGAP" width="240"></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Riwayat Transaksi</strong><br><img src="assets/screenshots/03-riwayat-transaksi.png" alt="Riwayat transaksi SIGAP" width="240"></td>
+    <td align="center"><strong>Laporan Laba Rugi</strong><br><img src="assets/screenshots/04-laporan-laba-rugi.png" alt="Laporan laba rugi SIGAP" width="240"></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Biaya Operasional</strong><br><img src="assets/screenshots/05-biaya-operasional.png" alt="Biaya operasional SIGAP" width="240"></td>
+    <td align="center"><strong>Pengaturan</strong><br><img src="assets/screenshots/06-pengaturan.png" alt="Pengaturan SIGAP" width="240"></td>
+  </tr>
+</table>
 
 ## Fitur Utama
 

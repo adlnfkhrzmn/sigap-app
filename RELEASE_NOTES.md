@@ -15,7 +15,7 @@ Dokumen ini memuat catatan rilis resmi untuk aplikasi kasir **SIGAP POS** (*poin
 - **Target SDK**: Android 14 (API level 34)
 - **Ukuran Berkas APK**: `13.583.041` bytes (~`13,58 MB`)
 - **Nama Berkas Rilis**: `SIGAP.apk`
-- **Status Publikasi**: Calon rilis disiapkan secara lokal (*Prepared Locally*), menunggu konfirmasi rilis resmi.
+- **Status Publikasi**: Rilis resmi (*Official Release*), dipublikasikan di GitHub Releases.
 
 ### Pembaruan Utama pada Versi 1.1.0
 
@@ -93,5 +93,6 @@ Dokumen ini memuat catatan rilis resmi untuk aplikasi kasir **SIGAP POS** (*poin
 - **Riwayat Transaksi & Struk**: Filter periode transaksi, rincian nota, dan pencetakan Android Print Spooler / PDF / WhatsApp.
 - **Laporan Penjualan Harian**: Rekapitulasi omset kotor, estimasi laba kotor, dan komparasi metode bayar.
 - **Impor, Ekspor, & Pencadangan**: Ekspor katalog produk Excel/CSV dan backup/restore SQLite lokal.
+
 
 
