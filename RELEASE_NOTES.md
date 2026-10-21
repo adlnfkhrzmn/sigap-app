@@ -1,93 +1,97 @@
-# Catatan Rilis SIGAP POS - Versi 1.0.0
+﻿# Catatan Rilis SIGAP POS
 
-Dokumen ini memuat catatan rilis resmi untuk peluncuran perdana aplikasi kasir **SIGAP POS** (*point-of-sale*) Android versi 1.0.0.
+Dokumen ini memuat catatan rilis resmi untuk aplikasi kasir **SIGAP POS** (*point-of-sale*) Android.
 
 ---
 
-## Ringkasan Rilis
+## Versi 1.1.0 (21 Oktober 2026)
 
-- **Versi Aplikasi**: `1.0.0`
-- **Kode Versi (Version Code)**: `1`
+### Ringkasan Rilis
+
+- **Versi Aplikasi**: `1.1.0`
+- **Kode Versi (Version Code)**: `2`
 - **ID Paket (Application ID)**: `io.github.adlnfkhrzmn.sigap`
 - **Persyaratan Sistem**: Minimum Android 8.0 (API level 26 / Oreo) atau versi yang lebih baru
 - **Target SDK**: Android 14 (API level 34)
-- **Ukuran Berkas APK**: `13.288.129` bytes (~`13,29 MB`)
+- **Ukuran Berkas APK**: `13.583.041` bytes (~`13,58 MB`)
 - **Nama Berkas Rilis**: `SIGAP.apk`
+- **Status Publikasi**: Calon rilis disiapkan secara lokal (*Prepared Locally*), menunggu konfirmasi rilis resmi.
 
----
+### Pembaruan Utama pada Versi 1.1.0
 
-## Fitur Utama pada Versi 1.0.0
+#### 1. Manajemen Sesi Kasir & Laci Kas (Cash Drawer)
+- **Pelacakan Sesi Kasir (Shift)**: Kasir dapat membuka dan menutup sesi kerja dengan pencatatan modal awal (*starting cash*), saldo kas akhir fisik saat tutup shift, perhitungan otomatis ekspektasi kas sistem, serta selisih kas (*cash difference*).
+- **Pergerakan Kas Laci (Drawer Movement)**: Pencatatan arus kas masuk (*Cash In*) dan kas keluar (*Cash Out*) di luar penjualan langsung (misalnya setoran modal tambahan atau pengambilan uang tunai).
+- **Penugasan Shift Fleksibel**: Transaksi penjualan kasir dapat dilakukan baik saat shift aktif sedang berjalan maupun tanpa membuka shift terlebih dahulu.
+- **Pencatatan Pembayaran Terpisah (Split-Payment)**: Mendukung transaksi dengan kombinasi metode pembayaran Tunai dan QRIS secara bersamaan, lengkap dengan pencatatan alokasi nominal masing-masing tender pada entitas pembayaran terpisah (`TransactionPaymentEntity`).
+- **Kompatibilitas Cadangan & Pemulihan**: Mekanisme backup dan restore SQLite lokal diperbarui ke skema Room versi 7 untuk mencadangkan dan memulihkan seluruh data shift, pergerakan laci, retur, pengeluaran, dan pembayaran split secara atomik.
+- **Buku Besar Stok Awal (Stock Ledger)**: Pencatatan pergerakan mutasi stok barang (`StockMovementEntity`) sebagai fondasi pelacakan audit persediaan.
 
-### 1. Kasir Cepat dan Manajemen Keranjang
-- **Pencarian Produk Instan**: Memilih dan memasukkan produk ke keranjang kasir secara cepat dengan pencarian nama produk atau kode SKU secara real-time.
-- **Navigasi Kategori Dinamis**: Mengelompokkan dan memfilter katalog produk di kasir menggunakan tombol *chip* kategori dengan pengguliran horizontal dan filter "Semua".
-- **Pengaturan Kuantitas dan Catatan**: Menyesuaikan jumlah item pesanan dengan tombol kuantitas (+/-) serta menambahkan catatan pesanan khusus per item.
-- **Validasi Ketersediaan Stok**: Membatasi penambahan jumlah belanja agar tidak melampaui sisa stok barang dan memberi penanda visual apabila stok habis.
-- **Suara Bip Kasir**: Menghasilkan konfirmasi audio singkat setiap kali produk berhasil dimasukkan ke keranjang kasir (dapat diaktifkan atau dinonaktifkan melalui menu Pengaturan).
+#### 2. Koreksi Transaksi & Integritas Finansial
+- **Pembatalan Transaksi (Cancellation)**: Kasir dapat membatalkan transaksi yang keliru; sistem memulihkan stok produk kembali ke katalog, mencatat pengembalian kas laci jika transaksi menggunakan tunai, dan mencatat riwayat pembatalan secara terverifikasi.
+- **Retur Produk Fleksibel**: Mendukung pengembalian barang per item dari transaksi yang sudah selesai, baik dengan pengembalian dana tunai langsung dari laci (*drawer cash refund*) maupun penyelesaian non-laci/eksternal.
+- **Klasifikasi Barang Retur (Restock vs. Scrap)**: Barang yang diretur dapat dipilih untuk dimasukkan kembali ke persediaan toko (*restock*) jika kondisi masih baik, atau dicatat sebagai barang rusak/dibuang (*scrap*) tanpa menambah stok fisik.
+- **Alokasi Nilai Rupiah Retur Sebagian yang Presisi**: Kalkulasi nilai pengembalian dana pada retur parsial memperhitungkan potongan diskon tingkat item secara proporsional berdasarkan harga efektif produk, memastikan jumlah uang yang dikembalikan tidak pernah melebihi nominal pembayaran riil pelanggan.
+- **Rekonsiliasi Finansial Menyeluruh**: Rekapitulasi penjualan kotor, pengembalian dana, dan biaya pokok penjualan disesuaikan secara konsisten di seluruh laporan keuangan.
 
-### 2. Diskon Per-Produk
-- **Dua Pilihan Jenis Diskon**: Mendukung penerapan diskon persentase (0%–100%) maupun potongan nominal tetap Rupiah (Rp) pada setiap item belanja.
-- **Kalkulasi Transparan**: Menghitung potongan harga per unit secara presisi dengan pembulatan standar, menampilkan harga asli tercoret, harga setelah diskon, dan total penghematan pada rincian transaksi.
+#### 3. Biaya Operasional & Laporan Laba Rugi
+- **Pencatatan Pengeluaran (Expense Tracking)**: Mencatat biaya operasional toko (seperti listrik, air, sewa, bahan habis pakai) dilengkapi kategori, deskripsi, tanggal, dan opsi melampirkan foto nota/struk belanja dari galeri.
+- **Pemisahan Sumber Dana Pengeluaran**: Sistem membedakan secara tegas antara pengeluaran yang memotong uang kas laci kasir (*affects drawer cash*) dan pengeluaran yang dibayar melalui rekening eksternal/transfer bank.
+- **Laporan Laba Rugi Komprehensif**: Menghitung laba bersih operasional berdasarkan rumus: `Penjualan Bersih - Harga Pokok Penjualan (HPP) - Biaya Operasional`.
+- **Indikator Estimasi Laba yang Jujur**: Apabila terdapat produk terjual yang belum memiliki data harga modal (HPP historis tidak diketahui), sistem menampilkan indikator estimasi/provisional dan tidak menampilkan laba bersih palsu seolah-olah bernilai definitif.
 
-### 3. Pemindai Barcode dan SKU Kamera
-- **Pemindaian On-Device**: Mengintegrasikan kamera belakang perangkat untuk memindai barcode fisik produk secara langsung tanpa memerlukan koneksi internet.
-- **Pencocokan Katalog Lokal**: Mencocokkan barcode hasil pemindaian langsung ke database produk di perangkat.
-- **Penanganan Barcode Baru**: Jika barcode belum terdaftar di katalog toko, aplikasi menyediakan opsi untuk membuka formulir pendaftaran produk baru dengan kode barcode terisi otomatis tanpa melakukan penyimpanan otomatis sebelum pengguna mengonfirmasi seluruh data produk.
-- **Input Manual**: Menyediakan opsi pengetikan nomor barcode secara manual apabila perangkat tidak memiliki kamera atau barcode fisik mengalami kerusakan.
+#### 4. Usabilitas Riwayat & Laporan
+- **Filter Tanggal Konsisten & Ringkas**: Komponen pemfilter tanggal baru (`DateFilterRow`) yang rapi dan responsif, mendukung 4 pilihan standar pada Riwayat Transaksi maupun Laporan Penjualan: **Hari Ini**, **Kemarin**, **7 Hari Terakhir**, dan **Custom** (rentang tanggal kalender bebas). Filter yang tidak didukung (seperti opsi 30 hari) tidak disediakan untuk menjaga konsistensi data.
+- **Tampilan Rincian Transaksi yang Lebih Informatif**: Menampilkan status pembatalan, riwayat retur, rincian pembayaran split tunai/QRIS, serta tautan ke transaksi asal.
 
-### 4. Katalog Produk dan Pengelolaan Kategori
-- **Manajemen Katalog Lengkap**: Menambah, memperbarui, dan menghapus data produk (nama, kategori, harga jual, harga modal opsional, stok awal, batas peringatan stok menipis, nomor SKU/barcode, dan ikon atau foto produk).
-- **Pengelolaan Kategori**: Menambah kategori baru, mengubah nama kategori, serta menghapus kategori dengan opsi memindahkan produk-produk terkait ke kategori lain secara aman.
-- **Indikator Stok**: Penanda visual informatif untuk stok barang yang menipis dan stok habis.
+#### 5. Peningkatan Integritas Spreadsheet & Impor-Ekspor
+- **Skema Ekspor Penjualan Lengkap**: Berkas ekspor penjualan (Excel multi-lembar dan paket CSV) kini menyertakan kolom `Subtotal`, `Diskon`, `Nominal Tunai`, dan `Nominal QRIS` berdasarkan alokasi tender riil.
+- **Rincian Diskon Tingkat Item**: Lembar rincian produk memuat kolom `Diskon Satuan` dan `Diskon Baris` untuk transparansi pelaporan diskon per barang.
+- **Pembedaan Nominal Alokasi Tender vs Uang Diserahkan**: Ekspor mencatat nominal pasti yang menjadi hak bayar tender, bukan uang fisik diserahkan pelanggan sebelum dikurangi kembalian.
+- **Filter Otomatis Lembar Kerja yang Aman**: AutoFilter Excel hanya diaktifkan bila tabel memiliki baris data, mencegah kesalahan pembacaan berkas pada tabel kosong.
+- **Validasi Ketat Relasional Impor Penjualan**: Pemeriksaan integritas data mencakup kecocokan kuantitas item, harga satuan, diskon baris, subtotal transaksi, total diskon, total akhir, serta alokasi pembayaran tender menggunakan aritmatika integer yang aman dari luapan (*overflow-safe*).
+- **Penolakan Format CSV Ringkasan Datar Tanpa Rincian**: Sistem secara tegas menolak impor CSV ringkasan satu lembar tanpa rincian item (*flat summary CSV*) guna mencegah fabrikasi harga produk atau pembagian nominal transaksi secara acak.
+- **Penolakan Impor Bersifat Atomik**: Jika ditemukan ketidaksesuaian data pada berkas yang diimpor, seluruh proses dibatalkan tanpa mengimpor sebagian transaksi, menjaga basis data tetap bersih dari data korup.
+- **Unduh Template Impor & Lembar Kerja**: Tersedia berkas template Excel/CSV siap pakai untuk impor katalog produk (`Template_Impor_Produk_SIGAP.xlsx`) dan lembar kerja stock opname fisik (`Lembar_Kerja_Stock_Opname_SIGAP.xlsx`).
 
-### 5. Pembayaran Tunai dan QRIS Dinamis Lokal
-- **Pembayaran Tunai**: Menghitung total belanja, nominal pembayaran, dan uang kembalian secara otomatis, dilengkapi tombol cepat pecahan uang pas dan pecahan nominal Rupiah umum.
-- **QRIS Dinamis Lokal**: Menghasilkan kode QR dinamis berisi nominal belanja sesuai isi keranjang yang dibuat secara lokal di perangkat dari gambar QRIS statis merchant yang diimpor dari galeri.
-- **Penguncian Pesanan (*Pending QRIS*)**: Mengunci pesanan aktif selama kasir menunggu pelanggan menyelesaikan pembayaran agar stok produk tidak digunakan ganda pada pesanan lain.
+#### 6. Perbaikan Lainnya
+- **Optimalisasi Tampilan Foto Produk**: Komponen gambar `ProductArtwork` dengan rasio aspek terjaga, penanganan caching memori, dan placeholder ikon cadangan yang konsisten.
+- **Penyelarasan Tata Letak Responsif**: Tampilan dialog dan tata letak menu Data & Berkas dioptimalkan untuk berbagai resolusi layar Android.
 
-### 6. Riwayat Transaksi dan Struk Penjualan
-- **Penyaringan Riwayat Transaksi**: Menyaring daftar riwayat transaksi berdasarkan periode waktu: Hari Ini, Kemarin, 7 Hari Terakhir, atau rentang tanggal khusus (Custom) melalui dialog kalender.
-- **Rincian Transaksi Lengkap**: Menampilkan informasi nota, waktu transaksi, kasir, rincian produk, potongan diskon, subtotal, total akhir, nominal bayar, dan uang kembalian.
-- **Pencetakan dan Pembagian Struk**: Mencetak nota melalui sistem cetak Android (*Android Print Spooler* ke printer terhubung atau simpan sebagai dokumen PDF) serta membagikan ringkasan nota dalam format teks ke WhatsApp atau aplikasi lain.
-
-### 7. Laporan Penjualan Harian
-- **Ringkasan Indikator Usaha**: Menampilkan total omset penjualan kotor, estimasi laba kotor (berdasarkan selisih harga jual dan harga modal yang diisi), jumlah transaksi berhasil, dan total produk terjual.
-- **Komparasi Metode Bayar**: Rekapitulasi perbandingan transaksi Tunai dibandingkan transaksi QRIS serta daftar produk terlaris.
-
-### 8. Impor, Ekspor, dan Pencadangan Data
-- **Ekspor dan Impor Katalog Produk**: Mendukung ekspor dan impor katalog produk beserta kategorinya menggunakan format berkas Excel (.xlsx) dan CSV (.csv).
-- **Ekspor Riwayat Penjualan**: Mengekspor riwayat transaksi penjualan ke dalam format berkas Excel (.xlsx) atau arsip ZIP berisi berkas CSV.
-- **Pencadangan dan Pemulihan Mandiri**: Menyediakan fitur cadangan (backup) dan pemulihan (restore) database SQLite lokal ke penyimpanan perangkat menggunakan Android Storage Access Framework (SAF).
-
-### 9. Pengaturan Usaha dan Tampilan
-- **Identitas Usaha**: Pengaturan nama toko, alamat gerai, nomor telepon/WhatsApp, dan catatan penutup nota belanja.
-- **Personalisasi Tampilan**: Dukungan tema Terang (Light), Gelap (Dark), atau Mengikuti Sistem perangkat, serta pilihan palet warna aksen kasir (Teal, Navy, Olive, Slate).
-
----
-
-## Batasan Operasional dan Arsitektur Data
-
-1. **Penyimpanan Lokal dan Operasional Offline**:
-   Catatan transaksi dan katalog produk disimpan secara lokal di perangkat Android. Alur kasir inti beroperasi secara *offline-first*. Aplikasi tidak meminta izin jaringan `android.permission.INTERNET` pada manifest aplikasi.
-2. **Perangkat Kasir Mandiri (*Single-Store*)**:
-   Dirancang untuk satu toko fisik dengan satu perangkat kasir mandiri. Sinkronisasi multi-cabang berbasis cloud belum tersedia pada rilis ini.
-3. **Verifikasi Pembayaran QRIS Bersifat Manual**:
-   SIGAP menghasilkan visual kode QR dinamis secara mandiri di perangkat tanpa integrasi *payment gateway* perbankan pihak ketiga. SIGAP tidak memotong saldo secara otomatis dan tidak menerima *webhook* perbankan. Kasir **wajib memverifikasi penerimaan dana secara manual** melalui aplikasi merchant (seperti GoPay Merchant, Shopee Partner, atau mutasi bank) sebelum menyelesaikan transaksi.
-4. **Pencetakan Struk Thermal**:
-   Pencetakan nota saat ini mengandalkan sistem Android Print Spooler atau pembagian teks struk. Integrasi langsung melalui driver Bluetooth printer POS ESC/POS belum tersedia.
-5. **Perlindungan Data Lokal**:
-   Pencopotan (*uninstall*) aplikasi dari perangkat dapat menghapus database lokal transaksi. Pengguna dianjurkan mencadangkan data berkala via menu Pengaturan sebelum melakukan tindakan pemeliharaan perangkat.
-
----
-
-## Integritas Berkas dan Verifikasi Keamanan
-
-Sebelum memasang berkas instalasi pada perangkat Android, pastikan integritas berkas telah diverifikasi:
+### Integritas Berkas dan Verifikasi Keamanan v1.1.0
 
 | Parameter | Nilai Resmi |
 | :--- | :--- |
 | **Nama Berkas Rilis** | `SIGAP.apk` |
-| **SHA-256 Berkas APK** | `fa4bba7ac8b7ca0712641e267dfaf2a10294a61c29d72f37c6ca5b7209868ce6` |
+| **Versi Aplikasi** | `1.1.0` (Version Code: `2`) |
+| **ID Paket** | `io.github.adlnfkhrzmn.sigap` |
+| **Ukuran Berkas** | `13.583.041` bytes (~`13,58 MB`) |
+| **SHA-256 Berkas APK** | `1cd255abc749bd25a46610a9d12fcd954c9cf0fca62f98fd040741acb0267573` |
 | **SHA-256 Sertifikat Penandatangan** | `fd7f2e9f46f9f6422df79e8189d5c35b8d2706ddf306e42f3af780f4fc588673` |
 | **Algoritma Kunci Sertifikat** | RSA 2048-bit |
 | **Skema Tanda Tangan APK** | APK Signature Scheme v2 |
+
+---
+
+## Riwayat Rilis Sebelumnya
+
+### Versi 1.0.0 (18 Oktober 2026)
+
+- **Versi Aplikasi**: `1.0.0`
+- **Kode Versi (Version Code)**: `1`
+- **ID Paket (Application ID)**: `io.github.adlnfkhrzmn.sigap`
+- **Ukuran Berkas APK**: `13.288.129` bytes (~`13,29 MB`)
+- **Nama Berkas Rilis**: `SIGAP.apk`
+- **SHA-256 Berkas APK**: `fa4bba7ac8b7ca0712641e267dfaf2a10294a61c29d72f37c6ca5b7209868ce6`
+
+#### Fitur Utama pada Versi 1.0.0
+- **Kasir Cepat dan Manajemen Keranjang**: Pencarian produk instan, navigasi kategori, pengaturan kuantitas/catatan, validasi ketersediaan stok, dan suara bip kasir.
+- **Diskon Per-Produk**: Diskon persentase maupun potongan nominal tetap Rupiah per produk.
+- **Pemindai Barcode Kamera**: Pemindaian on-device menggunakan CameraX dan ZXing.
+- **Katalog Produk & Kategori**: Manajemen produk, harga jual dan modal awal, serta indikator stok menipis.
+- **Pembayaran Tunai & QRIS Dinamis Lokal**: Pembayaran tunai otomatis dan pembuatan QRIS dinamis lokal tanpa internet.
+- **Riwayat Transaksi & Struk**: Filter periode transaksi, rincian nota, dan pencetakan Android Print Spooler / PDF / WhatsApp.
+- **Laporan Penjualan Harian**: Rekapitulasi omset kotor, estimasi laba kotor, dan komparasi metode bayar.
+- **Impor, Ekspor, & Pencadangan**: Ekspor katalog produk Excel/CSV dan backup/restore SQLite lokal.
+
+
