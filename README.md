@@ -16,12 +16,15 @@ SIGAP adalah aplikasi kasir Android untuk UMKM. Kamu bisa mencatat transaksi, me
 
 Lihat [catatan rilis](RELEASE_NOTES.md) untuk rincian pembaruan versi 1.1.0 dan riwayat versi sebelumnya.
 
-### Rilis SIGAP v2.0.0 (Tahap Persiapan Distribusi / Release Candidate)
+### Rilis SIGAP v2.0.0 (Rilis Resmi)
 
 SIGAP v2 menghadirkan kapabilitas deteksi notifikasi pembayaran QRIS otomatis, perbaikan identitas usaha instalasi baru, pembersihan keranjang otomatis, dan pelaporan bug mandiri.
 
-- **Status:** Release Candidate (Tahap Persiapan Rilis)
-- **Tautan Unduhan v2:** Menunggu publikasi rilis resmi di GitHub Releases (belum aktif)
+- **Status:** Rilis Resmi (*Official Release*)
+- **Unduh APK v2.0.0:** **[Download SIGAP v2.0.0 APK](https://github.com/adlnfkhrzmn/sigap-app/releases/download/v2.0.0/SIGAP.apk)**
+- **Versi:** 2.0.0 (Version Code: 1)
+- **Ukuran Berkas:** ~13,68 MB (13.682.899 bytes)
+- **Halaman Rilis GitHub:** [SIGAP v2.0.0](https://github.com/adlnfkhrzmn/sigap-app/releases/tag/v2.0.0)
 - **Dokumentasi & Berkas v2:** Silakan merujuk ke folder [v2/](v2/README.md) untuk dokumentasi lengkap v2, panduan pengguna, kebijakan privasi, panduan Play Protect, serta berkas rilis v2.
 
 ## Screenshot Aplikasi

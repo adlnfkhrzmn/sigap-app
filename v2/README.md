@@ -13,11 +13,12 @@ SIGAP v2 adalah aplikasi kasir (Point of Sale) Android offline-first yang diranc
 | **Versi Aplikasi** | 2.0.0 |
 | **Kode Versi (Version Code)** | 1 |
 | **Application ID** | `io.github.adlnfkhrzmn.sigapv2` |
-| **Target Sistem** | Android 8.0 (API Level 26) hingga Android 14 (API Level 34) |
-| **Status Publikasi** | **Tahap Pengujian Akhir & Persiapan Rilis (Release Candidate)** |
-| **Tautan Unduhan** | Menunggu publikasi resmi di GitHub Releases (Tautan publik belum diaktifkan) |
+| **Target Sistem** | Android 8.0 (API Level 26 / Oreo) hingga Android 14 (API Level 34) |
+| **Status Publikasi** | **Rilis Resmi (Official Release)** |
+| **Tautan Unduhan Langsung** | **[Unduh SIGAP v2.0.0 APK](https://github.com/adlnfkhrzmn/sigap-app/releases/download/v2.0.0/SIGAP.apk)** |
+| **Halaman Rilis Resmi** | **[GitHub Release v2.0.0](https://github.com/adlnfkhrzmn/sigap-app/releases/tag/v2.0.0)** |
 
-> **Catatan Pengunduhan:** Berkas APK pada repositori ini disiapkan untuk tahap staging pra-publikasi. Tautan unduhan publik resmi akan diaktifkan segera setelah rilis GitHub v2.0.0 dipublikasikan secara resmi oleh pengembang.
+> **Catatan Pengunduhan:** Unduh berkas instalasi APK resmi melalui tautan rilis di atas. Pastikan selalu memverifikasi nilai checksum SHA-256 berkas sebelum melakukan pemasangan pada perangkat kasir Android Anda.
 
 ---
 

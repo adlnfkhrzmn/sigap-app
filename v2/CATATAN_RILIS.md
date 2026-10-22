@@ -1,4 +1,4 @@
-# Catatan Rilis SIGAP v2.0.0 (Release Candidate)
+# Catatan Rilis SIGAP v2.0.0 (Rilis Resmi)
 
 Versi: 2.0.0  
 Kode Versi (Version Code): 1  
