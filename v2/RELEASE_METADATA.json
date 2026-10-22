@@ -1,0 +1,37 @@
+{
+  "applicationId": "io.github.adlnfkhrzmn.sigapv2",
+  "applicationName": "SIGAP v2",
+  "versionName": "2.0.0",
+  "versionCode": 1,
+  "minSdkVersion": 26,
+  "targetSdkVersion": 34,
+  "buildType": "release",
+  "debuggable": false,
+  "artifactName": "sigap-v2.0.0-release.apk",
+  "fileSizeBytes": 13682899,
+  "sha256": "cb62f12bf1c274b8c75cfeb4695d50d49ff00b251456523510ed79ae3dfbaeb5",
+  "buildTimestamp": "2026-10-22T07:00:46+07:00",
+  "signing": {
+    "scheme": "v2",
+    "verified": true,
+    "certificateDn": "CN=SIGAP Android Release, OU=SIGAP, O=SIGAP, L=Majalengka, ST=Unknown, C=ID",
+    "certificateSha256": "fd7f2e9f46f9f6422df79e8189d5c35b8d2706ddf306e42f3af780f4fc588673"
+  },
+  "acceptanceTestResults": {
+    "testDebugUnitTest": {
+      "totalTests": 437,
+      "passed": 437,
+      "failed": 0,
+      "ignored": 0,
+      "successRate": "100%"
+    },
+    "testReleaseUnitTest": {
+      "totalTests": 437,
+      "passed": 437,
+      "failed": 0,
+      "ignored": 0,
+      "successRate": "100%"
+    }
+  },
+  "distributionStatus": "LOCAL_RELEASE_CANDIDATE_READY"
+}

@@ -11,18 +11,18 @@ Harap perhatikan informasi identitas resmi aplikasi sebelum mengunduh dan melaku
 ### Identitas Resmi Aplikasi
 - **Nama Aplikasi**: SIGAP
 - **Nama Paket (Application ID)**: `io.github.adlnfkhrzmn.sigap`
-- **Versi Rilis**: `1.0.0` (Version Code: `1`)
+- **Versi Rilis**: `1.1.0` (Version Code: `2`)
 - **Nama Berkas Instalasi**: `SIGAP.apk`
 - **Persyaratan Sistem**: Android 8.0 (API level 26 / Oreo) atau versi yang lebih baru (Target SDK: API level 34)
-- **Ukuran Berkas**: Sekitar `13,29 MB` (`13.288.129` bytes)
+- **Ukuran Berkas**: Sekitar `13,58 MB` (`13.583.041` bytes)
 
 ### Sumber Unduhan Resmi
 Unduh berkas instalasi hanya dari saluran resmi distribusi SIGAP:
 - **Repositori Distribusi**: `https://github.com/adlnfkhrzmn/sigap-app`
-- **Tautan Unduhan Langsung**: **[Unduh SIGAP.apk](https://github.com/adlnfkhrzmn/sigap-app/releases/latest/download/SIGAP.apk)**
+- **Tautan Unduhan Langsung**: **[Unduh SIGAP v1.1.0 APK](https://github.com/adlnfkhrzmn/sigap-app/releases/download/v1.1.0/SIGAP.apk)**
 
 > [!NOTE]
-> **Status Tautan Unduhan**: Rilis resmi SIGAP POS v1.0.0 sudah tersedia. Gunakan tautan di atas untuk mengunduh `SIGAP.apk` dari rilis resmi terbaru. Jika berkas tidak dapat diunduh, buka halaman [Releases](https://github.com/adlnfkhrzmn/sigap-app/releases) untuk memeriksa ketersediaan aset.
+> **Status Tautan Unduhan**: Rilis resmi SIGAP POS v1.1.0 sudah tersedia. Gunakan tautan di atas untuk mengunduh `SIGAP.apk` dari aset rilis v1.1.0 resmi. Jika berkas tidak dapat diunduh, buka halaman [Releases](https://github.com/adlnfkhrzmn/sigap-app/releases) untuk memeriksa ketersediaan aset rilis.
 
 > [!IMPORTANT]
 > Jangan pernah mengunduh berkas APK SIGAP dari situs web pihak ketiga yang tidak dikenal, tautan pendek acak di media sosial, atau pesan grup obrolan yang tidak terpercaya. Berkas dari sumber tidak resmi berisiko dimanipulasi atau disisipi program berbahaya.
@@ -126,6 +126,6 @@ Sebelum memasang, Anda dapat mencocokkan integritas berkas unduhan dengan nilai 
 | Parameter | Nilai Resmi |
 | :--- | :--- |
 | **Nama Berkas Rilis** | `SIGAP.apk` |
-| **Ukuran Berkas** | `13.288.129` bytes (~`13,29 MB`) |
-| **SHA-256 Berkas APK** | `fa4bba7ac8b7ca0712641e267dfaf2a10294a61c29d72f37c6ca5b7209868ce6` |
+| **Ukuran Berkas** | `13.583.041` bytes (~`13,58 MB`) |
+| **SHA-256 Berkas APK** | `1cd255abc749bd25a46610a9d12fcd954c9cf0fca62f98fd040741acb0267573` |
 | **SHA-256 Sertifikat Rilis** | `fd7f2e9f46f9f6422df79e8189d5c35b8d2706ddf306e42f3af780f4fc588673` |
